@@ -4,13 +4,13 @@
 	if( revealElement ) {
 
 		revealElement.addEventListener( 'mousedown', function( event ) {
-			var defaultModifier = /Linux/.test( window.navigator.platform ) ? 'ctrl' : 'alt';
+			var defaultModifier = /Linux/.test( window.navigator.platform ) ? 'ctrl' : 'ctrl';
 
 			var modifier = ( Reveal.getConfig().zoomKey ? Reveal.getConfig().zoomKey : defaultModifier ) + 'Key';
 			var zoomLevel = ( Reveal.getConfig().zoomLevel ? Reveal.getConfig().zoomLevel : 2 );
 
 			// we want event to fire on mouse event only
-			if( /*event[ modifier ] && */!Reveal.isOverview() ) {
+			if( event[ modifier ] && !Reveal.isOverview() ) {
 				event.preventDefault();
 
 				zoom.to({
